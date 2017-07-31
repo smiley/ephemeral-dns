@@ -14,16 +14,19 @@
   "dependencies": {
     "google-cloud": "^0.56.0",
     "node-named": "^0.0.1",
-    "string-format": "^0.5.0"
+    "string-format": "^0.5.0",
+    "uuid": "^3.1.0",
+    "winston": "^2.3.1"
   },
   "config": {
-    "ip": "127.67.76.67"
+    "ip": "127.67.76.67",
+    "debug": false
   },
   "scripts": {
     "start": "node main.js"
   },
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/smiley/ephemeral-dns.git"
+    "type": "git",
+    "url": "https://github.com/smiley/ephemeral-dns.git"
   }
 }

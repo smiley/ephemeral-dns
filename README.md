@@ -1,6 +1,6 @@
 # Ephemeral DNS
 
-A small, Node.JS-based DNS server that dynamically queries outside sources (cloud providers, dynamic DNS, etc.) on-request to get their up-to-date IP address.
+A small, NodeJS-based DNS server that dynamically queries outside sources (cloud providers, dynamic DNS, etc.) on-request to get their up-to-date IP address.
 
 ## Experimental warning
 

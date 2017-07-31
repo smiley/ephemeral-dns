@@ -28,6 +28,8 @@
 var gcloud = require('google-cloud');
 
 var base = require('./base.js');
+var utils = require('../utils.js');
+const logger = utils.createLogger('provider-gce');
 
 function getExternalIpForVm(vm) {
     for (var i = 0; i < vm.metadata.networkInterfaces.length; i++) {
@@ -65,23 +67,23 @@ class GCEProvider extends base.LookupProvider {
         return new Promise(function (resolve, reject) {
             that.compute.getVMs({filter: 'name eq "{0}"'.format(subname), maxResults: 1}, function(err, vms) {
                 if (err != null) {
-                    console.error('Google Cloud returned error: %s', err);
+                    logger.error('Google Cloud returned error: %s', err);
                     reject(err);
                     return;
                 }
-                console.log('Google Cloud answered with %d VMs', vms.length, err);
+                logger.info('Google Cloud answered with %d VMs', vms.length, err);
                 
                 var externalIP = null;
                 for (var i = 0; i < vms.length; i++) {
                     var vm = vms[i];
                     if (vm.name.toLowerCase() == subname) {
-                        console.log('Found VM "%s"', vm.name);
+                        logger.debug('Found VM "%s"', vm.name);
                         // This is the VM!
                         externalIP = getExternalIpForVm(vm);
                         if (externalIP != null) {
-                            console.log('VM has external IP: %s', externalIP);
+                            logger.debug('VM has external IP: %s', externalIP);
                         } else {
-                            console.log('VM has NO external IP (but does exist)');
+                            logger.debug('VM has NO external IP (but does exist)');
                             externalIP = '0.0.0.0';
                         }
                         break;
