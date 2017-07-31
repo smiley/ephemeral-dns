@@ -1,0 +1,29 @@
+{
+  "name": "ephemeral-dns",
+  "version": "0.1.0",
+  "description": "A small DNS server which provides on-demand resolution of dynamic-IP resources, like virtual machines in a cloud provider.",
+  "license": "GPL-3.0",
+  "author": {
+    "name": "Smiley Barry",
+    "url": "https://github.com/smiley"
+  },
+  "files": [
+    "src",
+    "config.js"
+  ],
+  "dependencies": {
+    "google-cloud": "^0.56.0",
+    "node-named": "^0.0.1",
+    "string-format": "^0.5.0"
+  },
+  "config": {
+    "ip": "127.67.76.67"
+  },
+  "scripts": {
+    "start": "node main.js"
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/smiley/ephemeral-dns.git"
+  }
+}
