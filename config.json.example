@@ -1,0 +1,12 @@
+{
+    "providers": [
+        {
+            "type": "GCEProvider",
+            "params": {
+                "projectId": "hello-world-123456",
+                "keyFilename": "./auth.json"
+            },
+            "bindDomain": "gcloud.proxy"
+        }
+    ]
+}

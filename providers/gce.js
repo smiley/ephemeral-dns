@@ -1,3 +1,30 @@
+/**
+ * ### Google (Cloud) Compute Engine ###
+ * A lookup provider which searches for Virtual Machines and returns their first-found external IPv4.
+ * 
+ * Requires a service account, with the following read permissions: (and possibly less)
+ *  - compute.addresses.get
+ *  - compute.addresses.list
+ *  - compute.globalAddresses.get
+ *  - compute.globalAddresses.list
+ *  - compute.globalOperations.get
+ *  - compute.globalOperations.list
+ *  - compute.instances.get
+ *  - compute.instances.getGuestAttributes
+ *  - compute.instances.list
+ *  - compute.networks.get
+ *  - compute.networks.list
+ *  - compute.networks.use
+ *  - compute.networks.useExternalIp
+ *  - compute.projects.get
+ *  - compute.regions.get
+ *  - compute.regions.list
+ *  - compute.subnetworks.get
+ *  - compute.subnetworks.list
+ *  - compute.zones.get
+ *  - compute.zones.list
+ **/
+
 var gcloud = require('google-cloud');
 
 var base = require('./base.js');
